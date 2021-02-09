@@ -7,6 +7,7 @@ namespace GameProject
     class GamerSystemManager
     {
         //özellikle sadece oyuncuların bu sistemi kullanabilmesi için yaptım.
+        //methoda parametre olarak IPerson verdiğimiz zamansa hem oyuncu hem de müşteri için kullanılabilir olacaktır.
         public void SignUp(Gamer gamer)
         {
             Console.WriteLine(gamer.FirstName+ " " + gamer.LastName + " " + "adlı oyuncu başarıyla sisteme kayıt edildi.");
