@@ -15,7 +15,7 @@ namespace GameProject
 
             Gamer gamer2 = new Gamer();
             gamer2.FirstName = "Melih";
-            gamer2.LastName = "Küçük";
+            gamer2.LastName = "Şirin";
             gamer2.TcNo = "987654";
             gamer2.GamerId = 2;
 
@@ -43,6 +43,7 @@ namespace GameProject
                 Console.WriteLine(gamer.FirstName + " " + gamer.LastName);
 
             }
+            
             Console.WriteLine("Oyuncular geldi!!!");
             Console.WriteLine("--------------------------");
 
@@ -50,12 +51,14 @@ namespace GameProject
 
             ICampaignManager campaignManager1 = new GamerCampaign();
             campaignManager1.Entry();
+
             Console.WriteLine("-------------------------------");
 
             SellingService sellingService = new SellingService();
             sellingService.Sell(gamer1);
             sellingService.Sell(gamer2);
             sellingService.Sell(gamer3);
+
             Console.WriteLine("-------------------------------");
 
             GamerSystemManager gamerSystemManager = new GamerSystemManager();
@@ -64,9 +67,13 @@ namespace GameProject
             gamerSystemManager.SignUp(gamer3);
             gamerSystemManager.UpdateAcc(gamer2);
             gamerSystemManager.DeleteAcc(gamer3);
+
             Console.WriteLine("--------------------------------");
 
             sellingService.Return(gamer3);
+            campaignManager1.Update();
+            campaignManager1.Delete();
+
             Console.WriteLine("-----------------------------------");
 
             Customer[] customers = new Customer[] { customer1, customer2 };
@@ -74,6 +81,7 @@ namespace GameProject
             {
                 Console.WriteLine(customer.FirstName + " " + customer.LastName);
             }
+
             Console.WriteLine("Müşteriler geldi!!!");
             Console.WriteLine("---------------------------");
 
@@ -83,6 +91,10 @@ namespace GameProject
 
             sellingService.Sell(customer1);
             sellingService.Sell(customer2);
+            Console.WriteLine("----------------------------------");
+            campaignManager2.Update();
+            campaignManager2.Delete();
+
         }
     }
 }
